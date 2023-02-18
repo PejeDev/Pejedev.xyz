@@ -1,0 +1,25 @@
+@import "vue3-notion/dist/style.css"; /* optional Notion-like styles */
+@import "prismjs/themes/prism.css";
+@import "katex/dist/katex.min.css";
+
+
+body {
+  background-color: #101014;
+}
+
+.notion-text, .notion-title, .notion-callout-text, .notion-h2, .notion-list, .notion-page-text, .notion-bookmark-title, .notion-bookmark-link, .notion-bookmark-description, h1, h2, h3, h4 {
+	color: #fff !important;
+}
+
+.notion-blue_background, .notion-gray_background {
+	background-color: #18181c !important;
+}
+
+.notion-hr {
+	border-color: rgb(255 255 255 / 9%) !important;
+}
+
+.notion-page-cover {
+	width: var(--notion-max-width) !important;
+	margin: 0 auto;
+}
