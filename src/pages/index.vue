@@ -1,47 +1,41 @@
 <template>
-  <n-space>
-    <n-radio
-      :checked="checkedValue === 'Definitely Maybe'"
-      value="Definitely Maybe"
-      name="basic-demo"
-      @change="handleChange"
-    >
-      Definitely Maybe
-    </n-radio>
-    <n-radio
-      :checked="checkedValue === 'Be Here Now'"
-      value="Be Here Now"
-      name="basic-demo"
-      @change="handleChange"
-    >
-      Be Here Now
-    </n-radio>
-    <n-radio
-      :checked="checkedValue === 'Be Here Now'"
-      value="Be Here Now"
-      :disabled="disabled"
-      name="basic-demo"
-      label="Be Here Now"
-      @change="handleChange"
-    />
-    <n-switch v-model:value="disabled" />
-  </n-space>
+  <div class="home-banner">
+    <PersonalData />
+    <Canva />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from "vue";
+import Canva from "../components/three/catCanva.vue";
+import PersonalData from "../components/personalData.vue";
 
 export default defineComponent({
-  setup () {
-    const checkedValueRef = ref<string | null>(null)
-
-    return {
-      disabled: ref(true),
-      checkedValue: checkedValueRef,
-      handleChange (e: Event) {
-        checkedValueRef.value = (e.target as HTMLInputElement).value
-      }
-    }
-  }
-})
+  name: "Home",
+  components: {
+    Canva,
+    PersonalData
+  },
+});
 </script>
+
+<style scoped>
+.home-banner {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .home-banner {
+    flex-direction: column;
+    width: auto;
+    padding: 30px 30px;
+  }
+}
+</style>
