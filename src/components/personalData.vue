@@ -21,6 +21,9 @@ import VueWriter from "vue-writer";
 
 export default defineComponent({
 	name: "PersonalData",
+	components: {
+		VueWriter,
+	},
 	data() {
     return {
       arr: [
