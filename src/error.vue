@@ -61,7 +61,5 @@ export default defineComponent({
   margin: auto;
   height: 100%;
 }
-.n-result-header__title {
-  color: #fff !important;
-}
+
 </style>

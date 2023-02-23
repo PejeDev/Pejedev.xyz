@@ -16,5 +16,10 @@
     "naive-ui": "^2.34.3",
     "nuxt": "^3.0.0",
     "vue3-notion": "^0.1.40"
+  },
+  "dependencies": {
+    "three": "^0.149.0",
+    "vue-3d-loader": "^2.1.5",
+    "vue-writer": "^1.2.0"
   }
 }

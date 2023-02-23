@@ -110,10 +110,12 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   align-items: center;
+  fill: rgba(255, 255, 255, 0.65);
 }
 
-.navbar-brand svg {
-  fill: rgba(255, 255, 255, 0.65);
+.navbar-brand:hover, .navbar-brand span:hover {
+  fill: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .navbar-brand span {
