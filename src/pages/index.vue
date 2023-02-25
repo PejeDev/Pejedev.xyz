@@ -8,20 +8,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Canva from "../components/three/cat-canva.vue";
 import PersonalData from "../components/personal-data.vue";
 import CurrentStack from "../components/current-stack.vue";
 
-export default defineComponent({
-  name: "Home",
-  components: {
-    Canva,
-    PersonalData,
-    CurrentStack,
-  },
-});
+useHead({
+  title: 'Home',
+})
 </script>
 
 <style scoped>

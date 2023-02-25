@@ -6,19 +6,11 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Footer from "../components/core/footer.vue";
 import NavBar from "../components/core/navbar.vue";
 
-export default defineComponent({
-  name: "DefaultLayout",
-  layaout: "default",
-  components: {
-    Footer,
-    NavBar,
-  },
-});
+defineOgImageScreenshot()
 </script>
 
 <style scoped>
