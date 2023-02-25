@@ -15,27 +15,17 @@
   </NuxtLayout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+const props = defineProps<{
+  error: {
+    statusCode: number;
+    message: string;
+  };
+}>();
 
-
-export default defineComponent({
-  name: "ErrorLayout",
-  layout: "error",
-  props: {
-    error: {
-      type: Object,
-      required: true,
-    },
-  },
-	methods: {
-		goToHomepage() {
-			this.$router.push("/");
-		},
-		goToRandomMeme() {
-			this.$router.push("/meme");
-		},
-	}
+useSeoMeta({
+  title: props.error.statusCode,
+  description: props.error.message,
 });
 </script>
 
@@ -67,5 +57,4 @@ export default defineComponent({
   height: 100%;
   text-align: center;
 }
-
 </style>
