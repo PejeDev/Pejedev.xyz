@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { $notion } = useNuxtApp();
-const { data } = await useAsyncData("notion-index", () => $notion.getPageBlocks("49d4eb00912e47b484216fe184a5e179"));
+const { data } = await useAsyncData("notion-index", () => $notion.getPageBlocks("Juan-Camilo-Casta-eda-Mendez-49d4eb00912e47b484216fe184a5e179"));
 </script>
 
 <template>

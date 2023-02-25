@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="showMobileMenu ? 'toggle' : ''">
     <div class="navbar-content">
       <a href="/" class="navbar-brand">
         <svg
@@ -22,11 +22,42 @@
             :key="link.name"
             :href="link.url"
             class="navbar-item"
+            :class="isCurrentTab(link.url) ? 'active' : ''"
           >
             {{ link.name }}
           </a>
         </div>
       </div>
+      <div class="navbar-menu-mobile">
+        <div
+          id="hamburger"
+          @click="showMobileMenu = !showMobileMenu"
+          :class="showMobileMenu ? 'open' : ''"
+        >
+          <svg width="24" height="24" viewBox="0 0 100 100">
+            <path
+              class="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path
+              class="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-mobile-content" :class="showMobileMenu ? 'toggle' : ''">
+      <a
+        v-for="link in links"
+        :key="link.name"
+        :href="link.url"
+        class="navbar-item"
+        :class="isCurrentTab(link.url) ? 'active' : ''"
+      >
+        {{ link.name }}
+      </a>
     </div>
   </nav>
 </template>
@@ -38,6 +69,7 @@ export default defineComponent({
   name: "NavBar",
   data() {
     return {
+      showMobileMenu: false,
       links: [
         {
           name: "Home",
@@ -53,10 +85,16 @@ export default defineComponent({
         },
         {
           name: "About Me",
-          url: "/about",
+          url: "/about-me",
         },
       ],
     };
+  },
+  methods: {
+    isCurrentTab(url: string) {
+      const currentPath = this.$route.path || "/";
+      return currentPath === url;
+    },
   },
 });
 </script>
@@ -72,6 +110,7 @@ export default defineComponent({
   backdrop-filter: blur(16px);
   background-color: rgba(16, 16, 20, 0.45);
   padding: 0 15px;
+  height: 54px;
 }
 
 .navbar-content {
@@ -105,6 +144,42 @@ export default defineComponent({
   flex-direction: row;
 }
 
+.navbar-menu-mobile {
+  display: none;
+}
+
+.navbar-mobile-content {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(16, 16, 20, 0.95);
+  width: 100%;
+  height: calc(100vh - 54px);
+  top: 54px;
+}
+
+.toggle {
+  backdrop-filter: none;
+  display: flex;
+  background: rgba(16, 16, 20, 0.95);
+}
+
+.navbar-mobile-content .navbar-item {
+  margin: auto 0;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 720px) {
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-menu-mobile {
+    display: block;
+  }
+}
+
 .navbar-brand {
   text-decoration: none;
   display: flex;
@@ -113,7 +188,8 @@ export default defineComponent({
   fill: rgba(255, 255, 255, 0.65);
 }
 
-.navbar-brand:hover, .navbar-brand span:hover {
+.navbar-brand:hover,
+.navbar-brand span:hover {
   fill: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
 }
@@ -125,5 +201,54 @@ export default defineComponent({
   font-weight: 700;
   margin-left: 10px;
   line-height: 24px;
+}
+
+.active {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+#hamburger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  fill: #fff;
+}
+#hamburger .line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#hamburger .line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+#hamburger .line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+#hamburger .line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+#hamburger.open .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+#hamburger.open .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+#hamburger.open .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
 }
 </style>

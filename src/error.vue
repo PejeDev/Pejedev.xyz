@@ -2,26 +2,14 @@
   <NuxtLayout name="default">
     <div class="error-content">
       <div v-if="error.statusCode == 404">
-        <n-result
-          status="404"
-          title="404 Not Found"
-          description="You know life is always ridiculous."
-        >
-          <template #footer>
-            <n-button @click="goToRandomMeme()" >Find Something Funny</n-button>
-          </template>
-        </n-result>
+        <h1 class="error-title">{{ error.statusCode }}</h1>
+        <p class="error-description">{{ error.message }}</p>
+        <img class="error-image" src="/404.svg" alt="404" />
       </div>
       <div v-else>
-        <n-result
-          status="500"
-          title="500 Server Error"
-          description="Server error may prove that you need hiring more developers."
-        >
-          <template #footer>
-            <n-button @click="goToHomepage()">Go back Home</n-button>
-          </template>
-        </n-result>
+        <h1 class="error-title">{{ error.statusCode }}</h1>
+        <p class="error-description">{{ error.message }}</p>
+        <img class="error-image" src="/500.svg" alt="500" />
       </div>
     </div>
   </NuxtLayout>
@@ -52,6 +40,23 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.error-title {
+  font-size: 100px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.error-description {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.error-image {
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
+}
 .error-content {
   display: flex;
   flex-direction: column;
@@ -60,6 +65,7 @@ export default defineComponent({
   max-width: 900px;
   margin: auto;
   height: 100%;
+  text-align: center;
 }
 
 </style>

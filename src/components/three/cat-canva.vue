@@ -1,11 +1,11 @@
 <template>
   <vue3dLoader
+    class="cat-canva"
     :height="400"
-		:width="400"
     filePath="./cat.glb"
     :rotation="rotation"
-		:position	="{ x: 40, y: 20, z: 0 }"
-		:scale="{ x: 0.8, y: 0.8, z: 0.8 }"
+    :position="{ x: 40, y: 20, z: 0 }"
+    :scale="{ x: 0.8, y: 0.8, z: 0.8 }"
     @load="onLoad()"
     backgroundColor="#101014"
   ></vue3dLoader>
@@ -30,9 +30,9 @@ export default defineComponent({
     };
   },
   methods: {
-		rotate() {
+    rotate() {
       requestAnimationFrame(this.rotate);
-			this.rotation.y += 0.01;
+      this.rotation.y += 0.01;
     },
     onLoad() {
       this.rotate();
@@ -41,3 +41,10 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.cat-canva {
+  width: 100%;
+  max-width: 400px;
+}
+</style>
