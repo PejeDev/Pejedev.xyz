@@ -1,20 +1,25 @@
 <template>
-  <div class="home-banner">
-    <PersonalData />
-    <Canva />
+  <div>
+    <div class="home-banner">
+      <PersonalData />
+      <Canva />
+    </div>
+    <CurrentStack />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Canva from "../components/three/catCanva.vue";
-import PersonalData from "../components/personalData.vue";
+import Canva from "../components/three/cat-canva.vue";
+import PersonalData from "../components/personal-data.vue";
+import CurrentStack from "../components/current-stack.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
     Canva,
-    PersonalData
+    PersonalData,
+    CurrentStack,
   },
 });
 </script>

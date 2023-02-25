@@ -1,18 +1,15 @@
 <template>
-  <n-config-provider :theme="darkTheme">
     <div class="web-content">
       <NavBar />
       <slot />
       <Footer />
     </div>
-  </n-config-provider>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Footer from "../components/core/footer.vue";
 import NavBar from "../components/core/navbar.vue";
-import { darkTheme } from "naive-ui";
 
 export default defineComponent({
   name: "DefaultLayout",
@@ -21,11 +18,6 @@ export default defineComponent({
     Footer,
     NavBar,
   },
-  data() {
-    return {
-      darkTheme,
-    };
-  },
 });
 </script>
 
@@ -33,6 +25,6 @@ export default defineComponent({
 .web-content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100lvh;
 }
 </style>

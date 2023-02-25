@@ -101,7 +101,6 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   max-width: 900px;
-  margin-top: 32px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -115,10 +114,27 @@ export default defineComponent({
   width: 100%;
 }
 
+@media screen and (max-width: 480px) {
+ .copyright-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .copyright-content > * {
+    margin-bottom: 15px;
+  }
+  .copyright {
+    margin-right: 0 !important;
+  }
+  .copyright-content > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .copyright {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.65);
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 .copyright a {
@@ -133,7 +149,7 @@ export default defineComponent({
 .social-links {
   display: flex;
   flex-direction: row;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .social-links svg {
