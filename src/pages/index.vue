@@ -39,14 +39,15 @@ onMounted(async () => {
     (await useFetch(
       "https://api.github.com/search/repositories?q=user:pejedev&sort=updated&per_page=3"
     ).then((res) => {
-      blogLoading.value = false;
       return res.data.value;
     })) || {};
+  githubLoading.value = false;
 
-  blog.value = (await useFetch("/api/posts").then((res) => {
-    githubLoading.value = false;
-    return res.data.value as any[];
-  })) as any[];
+  blog.value = await useFetch("/api/posts").then((res) => {
+    return res.data.value;
+  });
+  blog.value = (blog.value as any[]).slice(0, 2);
+  blogLoading.value = false;
 });
 
 useHead({
