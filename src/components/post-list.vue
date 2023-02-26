@@ -62,6 +62,8 @@ function getFormatedDate(date: string) {
   display: flex;
   flex-direction: column;
   padding: 15px 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post-info h2 {
@@ -90,4 +92,27 @@ function getFormatedDate(date: string) {
 .tag-list span:hover {
   color: #fff;
 }
+
+@media  screen and (max-width: 820px) {
+  .post-content {
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .post-image {
+    max-width: 100%;
+    height: 400px;
+  }
+
+}
+
+@media  screen and (max-width: 500px) {
+  .post-content {
+    height: 500px;
+  }
+  .post-image {
+    height: 200px;
+  }
+}
+
 </style>
