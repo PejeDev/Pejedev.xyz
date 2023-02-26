@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import PostList from "~/components/post-list.vue";
 
-const { data } = await useFetch("/api/projects");
+const { data } = await useFetch("https://www.pejedev.xyz/api/projects");
 
 </script>
 

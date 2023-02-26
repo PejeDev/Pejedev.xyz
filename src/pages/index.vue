@@ -23,9 +23,11 @@ import CurrentStack from "../components/current-stack.vue";
 import PostList from "~/components/post-list.vue";
 import openSourceProjects from "../components/open-source-projects.vue";
 
-const blog = await useFetch("/api/posts").then((res) => {
-  return res.data.value.slice(0, 2);
+let blog: any[] = await useFetch("https://www.pejedev.xyz/api/posts").then((res) => {
+  return res.data.value as any[];
 });
+
+blog = blog.slice(0, 2);
 
 const github = await useFetch("https://api.github.com/search/repositories?q=user:pejedev&sort=updated&per_page=3").then((res) => {
   return res.data.value;
