@@ -4,6 +4,7 @@
     :height="400"
     filePath="./cat.glb"
     :rotation="rotation"
+    :backgroundAlpha="0"
     :position="{ x: 40, y: 20, z: 0 }"
     :scale="{ x: 0.8, y: 0.8, z: 0.8 }"
     @load="onLoad()"
@@ -46,5 +47,6 @@ export default defineComponent({
 .cat-canva {
   width: 100%;
   max-width: 400px;
+  background-color: transparent !important;
 }
 </style>
