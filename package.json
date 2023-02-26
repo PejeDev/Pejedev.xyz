@@ -24,7 +24,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@notionhq/client": "^2.2.3",
+    "@nuxt/types": "^2.16.0",
     "@vercel/analytics": "^0.1.10",
+    "@vercel/node": "^2.9.8",
     "three": "^0.149.0",
     "vue-3d-loader": "^2.1.5",
     "vue-writer": "^1.2.0"

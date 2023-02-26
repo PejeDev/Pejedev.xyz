@@ -7,18 +7,16 @@
       v-for="project in projects.items"
       :key="project.id"
     >
-      <h2>{{ project.name }}</h2>
+      <h2>
+        {{ project.name }}
+      </h2>
       <p>{{ project.description }}</p>
-      <div class="card-info">
-        <FontAwesomeIcon icon="fa-solid fa-star" />
-        <span>{{ project.stargazers_count }}</span>
-        <font-awesome-icon icon="fa-solid fa-code-fork" />
-        <span>{{ project.forks_count }}</span>
-        <font-awesome-icon icon="fa-solid fa-eye" />
-        <span>{{ project.watchers_count }}</span>
-      </div>
     </a>
-    <a href="https://github.com/PejeDev" style="text-decoration: none"  class="project-card">
+    <a
+      href="https://github.com/PejeDev"
+      style="text-decoration: none"
+      class="project-card"
+    >
       <div class="card-content">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -57,17 +55,6 @@ defineProps<{
   bottom: 30px;
 }
 
-.card-info > * {
-  margin: 0 5px;
-}
-
-.card-info span {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.card-info svg {
-  color: rgba(255, 255, 255, 0.65);
-}
 .project-card p {
   margin: 5px 0;
   color: rgba(255, 255, 255, 0.65);
@@ -98,7 +85,7 @@ defineProps<{
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 30px;
-  height: 120px;
+  padding: 15px;
+  height: 150px;
 }
 </style>
