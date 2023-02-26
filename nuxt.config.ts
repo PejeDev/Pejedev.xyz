@@ -28,7 +28,6 @@ export default defineNuxtConfig({
       titleSeparator: '|',
       siteDescription: 'PejeDev is blog about web development, programming, and other stuff.',
       language: 'en',
-      trailingSlash: true,
       indexable: true
     }
   },
