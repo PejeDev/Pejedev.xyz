@@ -7,11 +7,15 @@
     <CurrentStack />
     <div class="recent-posts">
       <span class="subtitle-open">Open Source Projects</span>
-      <openSourceProjects :projects="github" />
+      <Spinner :is-loading="githubLoading">
+        <openSourceProjects :projects="github" />
+      </Spinner>
     </div>
     <div class="recent-posts">
       <span class="subtitle-blog">Recent blog posts</span>
-      <PostList path="blog" :data="blog" />
+      <Spinner :is-loading="blogLoading">
+        <PostList path="blog" :data="blog" />
+      </Spinner>
     </div>
   </div>
 </template>
@@ -22,15 +26,27 @@ import PersonalData from "../components/personal-data.vue";
 import CurrentStack from "../components/current-stack.vue";
 import PostList from "~/components/post-list.vue";
 import openSourceProjects from "../components/open-source-projects.vue";
+import Spinner from "../components/spinner.vue";
 
-let blog: any[] = await useFetch("https://www.pejedev.xyz/api/posts").then((res) => {
-  return res.data.value as any[];
-});
+let blog = ref({});
+let github = ref({});
 
-blog = blog.slice(0, 2);
+let blogLoading = ref(true);
+let githubLoading = ref(true);
 
-const github = await useFetch("https://api.github.com/search/repositories?q=user:pejedev&sort=updated&per_page=3").then((res) => {
-  return res.data.value;
+onMounted(async () => {
+  github.value =
+    (await useFetch(
+      "https://api.github.com/search/repositories?q=user:pejedev&sort=updated&per_page=3"
+    ).then((res) => {
+      blogLoading.value = false;
+      return res.data.value;
+    })) || {};
+
+  blog.value = (await useFetch("/api/posts").then((res) => {
+    githubLoading.value = false;
+    return res.data.value as any[];
+  })) as any[];
 });
 
 useHead({
