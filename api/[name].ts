@@ -35,11 +35,7 @@ export default function handler(
       .then((data) => {
         const payload = data.results;
 
-        response.status(200).json({
-          body: payload,
-          query: request.query,
-          cookies: request.cookies,
-        });
+        response.status(200).json(payload);
       });
   } else {
     notion.databases
@@ -64,11 +60,7 @@ export default function handler(
       })
       .then((data) => {
         const payload = data.results;
-        response.status(200).json({
-          body: payload,
-          query: request.query,
-          cookies: request.cookies,
-        });
+        response.status(200).json(payload);
       });
   }
 }
