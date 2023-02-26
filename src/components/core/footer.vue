@@ -3,7 +3,7 @@
     <hr class="notion-hr" />
     <div class="copyright-content">
       <div class="social-links">
-        <a href="https://github.com/PejeDev">
+        <a href="https://github.com/PejeDev" alt="Github">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -15,7 +15,7 @@
             />
           </svg>
         </a>
-        <a href="https://twitter.com/PejeDev">
+        <a href="https://twitter.com/PejeDev" alt="Twitter">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -27,7 +27,7 @@
             />
           </svg>
         </a>
-        <a href="https://www.linkedin.com/in/pejedev/">
+        <a href="https://www.linkedin.com/in/pejedev/" alt="Linkedin">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -39,7 +39,7 @@
             />
           </svg>
         </a>
-        <a href="https://t.me/PejeDev">
+        <a href="https://t.me/PejeDev" alt="Telegram">
           <svg
             width="24px"
             height="24px"
@@ -61,7 +61,7 @@
             />
           </svg>
         </a>
-        <a href="mailto:hi@pejedev.xyz">
+        <a href="mailto:hi@pejedev.xyz" alt="Email">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
