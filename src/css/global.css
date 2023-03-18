@@ -1,8 +1,4 @@
-@import "vue3-notion/dist/style.css";
-/* optional Notion-like styles */
 @import "prismjs/themes/prism.css";
-@import "katex/dist/katex.min.css";
-
 
 body {
 	background-color: #101014;
