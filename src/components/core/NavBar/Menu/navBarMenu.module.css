@@ -1,0 +1,76 @@
+.menuItem {
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+  margin: 0 15px;
+}
+
+.menuItem:last-child {
+  margin-right: 0;
+}
+
+.selected {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.navMenuDesktop {
+  display: flex;
+  flex-direction: row;
+}
+
+.navMenuMobile {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .navMenuDesktop {
+    display: none;
+  }
+  .navMenuMobile {
+    display: block;
+  }
+}
+
+#hamburger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  fill: #fff;
+}
+#hamburger .line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#hamburger .line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+#hamburger .line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+#hamburger .line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+#hamburger.open .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+#hamburger.open .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+#hamburger.open .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}

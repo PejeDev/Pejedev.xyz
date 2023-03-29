@@ -10,16 +10,13 @@ module.exports = {
     'next',
     'next/core-web-vitals'
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json'
   },
-  plugins: [
-    'react'
-  ],
+  plugins: ['react'],
   rules: {
   }
 }

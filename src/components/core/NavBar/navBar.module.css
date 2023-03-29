@@ -1,0 +1,43 @@
+.navBar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  background-color: rgba(21, 21, 22, 0.45);
+  padding: 0 15px;
+  height: 54px;
+}
+
+.navBarContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0px;
+  max-width: 900px;
+  width: 100%;
+}
+
+
+.navBarLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  fill:rgba(255, 255, 255, 0.65)
+}
+
+.navBarLogo:hover,
+.navBarLogo span:hover {
+  fill: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.navBarLogo > span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.65);
+}
