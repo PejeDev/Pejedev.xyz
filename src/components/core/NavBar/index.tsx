@@ -1,7 +1,7 @@
 'use client'
 import { type MenuItem } from '@/types/navigation'
 import { NavBarMenu } from './Menu'
-import Style from './navbar.module.css'
+import Style from './navBar.module.css'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { MobileContent } from './MobileContent'
