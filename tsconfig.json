@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/core/NavBar/navBar.module.css", "src/components/core/NavBar/MobileContent/mobileContent.module.css"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/core/NavBar/navBar.module.css", "src/components/core/NavBar/MobileContent/mobileContent.module.css", "src/components/home/catRender/Cat.jsx", "src/components/home/catRender/Cat.jsx"],
   "exclude": ["node_modules"]
 }
