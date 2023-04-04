@@ -3,4 +3,5 @@
   max-width: 400px;
   height: 400px !important;
   background-color: transparent !important;
+  touch-action: auto !important;
 }

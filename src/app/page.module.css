@@ -5,17 +5,12 @@
   margin: auto;
 }
 
-.main>* {
-  margin: 15px 0;
-}
-
 .intro {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0px;
 }
 
 @media (max-width: 720px) {

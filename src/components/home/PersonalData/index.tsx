@@ -7,7 +7,7 @@ export function PersonalData (): JSX.Element {
     <div>
       <span>Hi, I&apos;m</span>
       <h1>Juan Castañeda</h1>
-      <h2><Typewriter
+      <span><Typewriter
         options={{
           strings: ['Senior Software Developer', 'Video Game Developer Enthusiast', 'King Of The Meerkats'],
           autoStart: true,
@@ -15,7 +15,7 @@ export function PersonalData (): JSX.Element {
           delay: 25,
           deleteSpeed: 25
         }}
-      /></h2>
+      /></span>
       <p>a.k.a <a href="https://twitter.com/PejeDev">PejeDev</a></p>
       <p className={Style.glassFrame}>
         I&apos;m a Senior Software Developer based in Bogota, Colombia. <br />
