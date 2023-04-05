@@ -2,6 +2,25 @@
 const nextConfig = {
   experimental: {
     appDir: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        port: '',
+        hostname: 'static.ghost.org'
+      },
+      {
+        protocol: 'https',
+        port: '',
+        hostname: 'ghost.pejedev.xyz'
+      },
+      {
+        protocol: 'https',
+        port: '',
+        hostname: 'images.unsplash.com'
+      }
+    ]
   }
 }
 

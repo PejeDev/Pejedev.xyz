@@ -1,0 +1,88 @@
+.latestBlogPosts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.latestBlogPosts h2 {
+  font-size: 1.2em;
+}
+
+.postsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 15px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.postInfo h3 {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 1);
+}
+
+.postInfo h3:hover {  
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.postInfo > * {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.postInfo p {
+  color: rgba(255, 255, 255, 1);
+}
+
+.postImage {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  height: 300px;
+}
+
+.postAuthor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.postAuthor img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.postAuthor div {
+  display: flex;
+  flex-direction: column;
+}
+
+.readMore {
+  display: inline-block;
+  align-self: flex-end;
+  text-align: end;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}

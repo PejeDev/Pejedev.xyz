@@ -1,4 +1,4 @@
-import { type GithubProject } from '@/types/github'
+import { type GithubRepo } from '@/types/github'
 import Styles from './open-source-projects.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeBranch, faCode, faStar, faCodeFork, faEye } from '@fortawesome/free-solid-svg-icons'
@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { type IconProp } from '@fortawesome/fontawesome-svg-core'
 
 interface ComponentProps {
-  projects: GithubProject[]
+  projects: GithubRepo[]
 }
 
 export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
