@@ -16,6 +16,7 @@ export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
       href={project.html_url}
       target="_blank"
       className={Styles.projectCard}
+      title={project.name}
     >
       <div>
         <h3><FontAwesomeIcon icon={faCodeBranch} /> {project.name}</h3>
@@ -38,6 +39,7 @@ export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
           className={Styles.projectCard}
           href="https://github.com/PejeDev"
           target="_blank"
+          title="Checkout more projects!"
         >
           <div className={Styles.moreProjects}>
             <FontAwesomeIcon icon={faGithub as IconProp} />

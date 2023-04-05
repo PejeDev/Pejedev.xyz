@@ -41,7 +41,7 @@ export function NavBar (): JSX.Element {
   return (
     <nav className={Style.navBar}>
       <div className={Style.navBarContent}>
-        <Link href="/" className={Style.navBarLogo}>
+        <Link title='Pejedev portfolio & blog homepage' href="/" className={Style.navBarLogo}>
           <svg
             width="24"
             height="24"

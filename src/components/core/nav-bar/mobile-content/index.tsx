@@ -8,7 +8,7 @@ interface ComponentProps {
 
 export function MobileContent ({ menu }: ComponentProps): JSX.Element {
   const menuItems = menu.map((item) =>
-    <Link href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
+    <Link title={item.name} href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
       {item.name}
     </Link>
   )

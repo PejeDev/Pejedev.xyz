@@ -10,28 +10,28 @@ export function Footer (): JSX.Element {
 
   return (
     <footer className={Style.footer}>
-      <hr/>
+      <hr />
       <div className={Style.footerContent}>
         <div className={Style.footerSocialLinks}>
-          <a href="https://github.com/PejeDev" >
-            <FontAwesomeIcon icon={faGithub as IconProp}/>
+          <a title='@PejeDev Github profile' href="https://github.com/PejeDev" >
+            <FontAwesomeIcon icon={faGithub as IconProp} />
           </a>
-          <a href="https://twitter.com/PejeDev" >
+          <a title='@PejeDev Twitter profile' href="https://twitter.com/PejeDev" >
             <FontAwesomeIcon icon={faTwitter as IconProp} />
           </a>
-          <a href="https://www.linkedin.com/in/pejedev/" >
+          <a title='@PejeDev LinkedIn profile' href="https://www.linkedin.com/in/pejedev/" >
             <FontAwesomeIcon icon={faLinkedin as IconProp} />
           </a>
-          <a href="https://t.me/PejeDev" >
+          <a title='@PejeDev Telegram Account' href="https://t.me/PejeDev" >
             <FontAwesomeIcon icon={faTelegram as IconProp} />
           </a>
-          <a href='mailto:hi@pejedev.xyz'>
+          <a title='@Pejdev Email Account' href='mailto:hi@pejedev.xyz'>
             <FontAwesomeIcon icon={faEnvelope as IconProp} />
           </a>
         </div>
         <div className={Style.footerCopyright}>
           © {year} | Made with ❤️ by
-          <a href="https://twitter.com/PejeDev"> @PejeDev</a>.
+          <a title='@PejeDev Twitter profile' href="https://twitter.com/PejeDev"> @PejeDev</a>.
         </div>
       </div>
     </footer>
