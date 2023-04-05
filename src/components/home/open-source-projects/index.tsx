@@ -17,8 +17,10 @@ export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
       target="_blank"
       className={Styles.projectCard}
     >
-      <h3><FontAwesomeIcon icon={faCodeBranch} /> {project.name}</h3>
-      <p>{project.description}</p>
+      <div>
+        <h3><FontAwesomeIcon icon={faCodeBranch} /> {project.name}</h3>
+        <p>{project.description}</p>
+      </div>
       <div className={Styles.projectStats}>
         <span><FontAwesomeIcon icon={faCode} /> {project.language}</span>
         <span><FontAwesomeIcon icon={faStar} /> {project.stargazers_count}</span>
