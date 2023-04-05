@@ -5,6 +5,22 @@
   margin: auto;
 }
 
+.main > *:first-child {
+  margin: 0;
+}
+
+.main > *:nth-child(2) {
+  margin: 0;
+}
+
+.main > * {
+  margin-top: 15px;
+}
+
+.main > *:last-child {
+  margin-bottom: 15px;
+}
+
 .intro {
   display: flex;
   flex-direction: row;
@@ -17,14 +33,22 @@
   .intro {
     flex-direction: column;
     width: auto;
-    margin-top: 30px;
+    margin-top: 16px !important;
   }
 }
 
 @media (max-width: 930px) {
-  .intro {
+  .main > * {
     margin-left: 15px;
     margin-right: 15px;
+  }
+
+  .main > *:nth-child(2) {
+    margin: 0;
+  }
+
+  .main > *:first-child {
+    margin: 0 15px;
   }
 
 }
