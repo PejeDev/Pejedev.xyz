@@ -1,9 +1,9 @@
 import '@/styles/globals.css'
-import { Footer } from '@/components/core/Footer'
+import { Footer } from '@/components/core/footer'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
-import { NavBar } from '@/components/core/NavBar'
+import { NavBar } from '@/components/core/nav-bar'
 config.autoAddCss = false
 
 export const metadata = {

@@ -1,9 +1,9 @@
 import { type IconProp } from '@fortawesome/fontawesome-svg-core'
-import Style from './techStack.module.css'
-import { faReact, faVuejs, faJsSquare, faJava, faPython, faRust, faAws, faHtml5, faGithub, faCss3Alt } from '@fortawesome/free-brands-svg-icons'
+import Style from './tech-stack.module.css'
+import { faAws, faCss3Alt, faGithub, faHtml5, faJava, faJsSquare, faPython, faReact, faRust, faVuejs } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function TechStach (): JSX.Element {
+export function TechStach (): JSX.Element {
   return (
     <div className={Style.techStack}>
       <h2>Tech Stack</h2>

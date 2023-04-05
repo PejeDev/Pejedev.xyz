@@ -1,5 +1,6 @@
 import { type MenuItem } from '@/types/navigation'
-import Style from './navBarMenu.module.css'
+import Style from './nav-bar-menu.module.css'
+import Link from 'next/link'
 
 interface ComponentProps {
   menu: MenuItem[]
@@ -9,9 +10,9 @@ interface ComponentProps {
 
 export function NavBarMenu ({ menu, toggle, isToggle }: ComponentProps): JSX.Element {
   const menuItems = menu.map((item) =>
-    <a href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
+    <Link href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
       {item.name}
-    </a>
+    </Link>
   )
 
   return (

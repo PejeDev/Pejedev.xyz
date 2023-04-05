@@ -1,7 +1,7 @@
 'use client'
 import { Canvas } from '@react-three/fiber'
 import { Gltf, OrbitControls, PerspectiveCamera } from '@react-three/drei'
-import Style from './catRender.module.css'
+import Style from './cat-render.module.css'
 
 export function CatRender (): JSX.Element {
   return (

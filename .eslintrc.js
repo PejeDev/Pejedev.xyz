@@ -18,5 +18,6 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    '@next/next/no-html-link-for-pages': 'off'
   }
 }

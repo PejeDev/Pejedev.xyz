@@ -1,10 +1,11 @@
 'use client'
 import { type MenuItem } from '@/types/navigation'
-import { NavBarMenu } from './Menu'
-import Style from './navBar.module.css'
+import { NavBarMenu } from './menu'
+import Style from './nav-bar.module.css'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { MobileContent } from './MobileContent'
+import { MobileContent } from './mobile-content'
+import Link from 'next/link'
 
 export function NavBar (): JSX.Element {
   const [isToggle, setIsToggle] = useState(false)
@@ -40,7 +41,7 @@ export function NavBar (): JSX.Element {
   return (
     <nav className={Style.navBar}>
       <div className={Style.navBarContent}>
-        <a href="/" className={Style.navBarLogo}>
+        <Link href="/" className={Style.navBarLogo}>
           <svg
             width="24"
             height="24"
@@ -53,7 +54,7 @@ export function NavBar (): JSX.Element {
             />
           </svg>
           <span>PejeDev</span>
-        </a>
+        </Link>
         <NavBarMenu menu={menu} toggle={toggleMenu} isToggle={isToggle}/>
       </div>
       { isToggle ? <MobileContent menu={menu} /> : null }
