@@ -38,16 +38,9 @@ export async function generateMetadata ({ params }: BlogPostProps): Promise<Reco
   }
 }
 
-export async function generateStaticParams (): Promise<Record<string, unknown>> {
+export async function generateStaticParams (): Promise<any[]> {
   const posts = await getPosts(1000)
-  return {
-    paths: posts.map((post) => ({
-      params: {
-        slug: post.slug
-      }
-    })),
-    fallback: false
-  }
+  return posts.map((post) => ({ params: { slug: post.slug } }))
 }
 
 export default async function BlogPost ({ params }: BlogPostProps): Promise<JSX.Element> {
