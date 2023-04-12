@@ -1,0 +1,51 @@
+.post-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post-banner {
+  display: block;
+  object-fit: cover;
+  min-height: 30vh;
+  max-height: 500px;
+  width: 100%;
+  height: 50vh;
+  object-position: center 32.04%;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0 20px;
+  max-width: 720px;
+}
+
+.post-header hr {
+  margin: 20px 0;
+}
+
+.post-author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.post-author img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-author div {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-author > div > span:last-child {
+  color: rgba(255, 255, 255, 0.8);
+}

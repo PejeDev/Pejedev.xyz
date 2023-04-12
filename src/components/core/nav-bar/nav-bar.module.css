@@ -29,8 +29,7 @@
   fill:rgba(255, 255, 255, 0.65)
 }
 
-.navBarLogo:hover,
-.navBarLogo span:hover {
+.navBarLogo:hover > * {
   fill: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
 }

@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/revalidate/revalidate.jsvalidate.js", "src/pages/api/revalidate.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/revalidate/revalidate.jsvalidate.js", "src/pages/api/revalidate.js", "src/app/not-found.tsxx"],
   "exclude": ["node_modules"]
 }
