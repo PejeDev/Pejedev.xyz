@@ -10,26 +10,7 @@ interface ComponentProps {
 }
 
 export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
-  const projectItems = projects.map((project) => (
-    <a
-      key={project.id}
-      href={project.html_url}
-      target="_blank"
-      className={Styles.projectCard}
-      title={project.name}
-    >
-      <div>
-        <h3><FontAwesomeIcon icon={faCodeBranch} /> {project.name}</h3>
-        <p>{project.description}</p>
-      </div>
-      <div className={Styles.projectStats}>
-        <span><FontAwesomeIcon icon={faCode} /> {project.language}</span>
-        <span><FontAwesomeIcon icon={faStar} /> {project.stargazers_count}</span>
-        <span><FontAwesomeIcon icon={faEye} /> {project.watchers_count}</span>
-        <span><FontAwesomeIcon icon={faCodeFork} /> {project.forks_count}</span>
-      </div>
-    </a>
-  ))
+  const projectItems = GenerateProjectList(projects)
   return (
     <div className={Styles.projectsContainer}>
       <h2>Open Source Projects</h2>
@@ -49,4 +30,28 @@ export function OpenSourceProjects ({ projects }: ComponentProps): JSX.Element {
       </div>
     </div>
   )
+}
+
+function GenerateProjectList (projects: GithubRepo[]): JSX.Element[] {
+  const projectsList = projects.map((project) => (
+    <a
+      key={project.id}
+      href={project.html_url}
+      target="_blank"
+      className={Styles.projectCard}
+      title={project.name}
+    >
+      <div>
+        <h3><FontAwesomeIcon icon={faCodeBranch} /> {project.name}</h3>
+        <p>{project.description}</p>
+      </div>
+      <div className={Styles.projectStats}>
+        <span><FontAwesomeIcon icon={faCode} /> {project.language}</span>
+        <span><FontAwesomeIcon icon={faStar} /> {project.stargazers_count}</span>
+        <span><FontAwesomeIcon icon={faEye} /> {project.watchers_count}</span>
+        <span><FontAwesomeIcon icon={faCodeFork} /> {project.forks_count}</span>
+      </div>
+    </a>
+  ))
+  return projectsList
 }

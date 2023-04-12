@@ -9,7 +9,19 @@ interface LatestBlogPostsProps {
 }
 
 export function LatestBlogPosts ({ posts, title = "Latest's Blog Posts" }: LatestBlogPostsProps): JSX.Element {
-  const postsList = posts.map((post) => {
+  const postsList = GenetarePostListComponent(posts)
+  return (
+    <div className={Style.latestBlogPosts}>
+      <h2>{title}</h2>
+      <div className={Style.postsList}>
+        {postsList}
+      </div>
+    </div>
+  )
+}
+
+function GenetarePostListComponent (posts: PostOrPage[]): JSX.Element[] {
+  const postList = posts.map((post) => {
     const formattedDate = new Date(post.published_at ?? '').toLocaleDateString('en-US', {
       day: 'numeric',
       month: 'long',
@@ -41,15 +53,7 @@ export function LatestBlogPosts ({ posts, title = "Latest's Blog Posts" }: Lates
           </Link>
         </div>
       </div>
-
     )
   })
-  return (
-    <div className={Style.latestBlogPosts}>
-      <h2>{title}</h2>
-      <div className={Style.postsList}>
-        {postsList}
-      </div>
-    </div>
-  )
+  return postList
 }

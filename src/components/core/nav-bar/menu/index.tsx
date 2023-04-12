@@ -9,16 +9,15 @@ interface ComponentProps {
 }
 
 export function NavBarMenu ({ menu, toggle, isToggle }: ComponentProps): JSX.Element {
-  const menuItems = menu.map((item) =>
-    <Link title={item.name} href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
-      {item.name}
-    </Link>
-  )
-
   return (
     <div className={Style.navMenu}>
       <div className={Style.navMenuDesktop}>
-        {menuItems}
+        {menu.map((item) =>
+          <Link title={item.name} href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
+            {item.name}
+          </Link>
+        )
+        }
       </div>
       <div className={Style.navMenuMobile}>
         <div

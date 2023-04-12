@@ -1,9 +1,8 @@
 import GhostContentAPI, { type PostsOrPages } from '@tryghost/content-api'
 
-// Create API instance with site credentials
 const api = new GhostContentAPI({
-  url: 'https://ghost.pejedev.xyz',
-  key: 'ce061767c5b53105435ac6f474',
+  url: process.env.GHOST_API_URL != null ? process.env.GHOST_API_URL : '',
+  key: process.env.GHOST_CONTENT_API_KEY != null ? process.env.GHOST_CONTENT_API_KEY : '',
   version: 'v5.0'
 })
 
