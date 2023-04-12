@@ -1,8 +1,8 @@
 import GhostContentAPI, { type PostsOrPages } from '@tryghost/content-api'
 
 const api = new GhostContentAPI({
-  url: process.env.GHOST_API_URL != null ? process.env.GHOST_API_URL : '',
-  key: process.env.GHOST_CONTENT_API_KEY != null ? process.env.GHOST_CONTENT_API_KEY : '',
+  url: 'https://ghost.pejedev.xyz',
+  key: 'ce061767c5b53105435ac6f474',
   version: 'v5.0'
 })
 
