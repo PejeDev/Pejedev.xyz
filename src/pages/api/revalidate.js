@@ -14,7 +14,6 @@ export default async function handler (req, res) {
   try {
     await res.revalidate('/')
     await res.revalidate('/blog')
-    await res.revalidate('/projects')
     const posts = await getGhostLatestPosts()
 
     for (const post of posts) {
@@ -24,6 +23,6 @@ export default async function handler (req, res) {
     return res.json({ revalidated: true })
   } catch (error) {
     console.log(error)
-    return res.status(500).json({ message: 'Error at revalidating ISR', error })
+    return res.status(500).json({ message: 'Error at revalidating ISR', error: error.message })
   }
 }
