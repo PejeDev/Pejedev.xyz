@@ -1,4 +1,4 @@
-import { getPost } from '@/lib/ghost'
+import { getPosts, getPost } from '@/lib/ghost'
 import Style from './blog-post.module.css'
 import Image from 'next/image'
 import Ghost from '@/styles/ghost.module.css'
@@ -35,6 +35,18 @@ export async function generateMetadata ({ params }: BlogPostProps): Promise<Reco
     alternates: {
       canonical: `/blog/${params.slug}`
     }
+  }
+}
+
+export async function generateStaticParams (): Promise<Record<string, unknown>> {
+  const posts = await getPosts(1000)
+  return {
+    paths: posts.map((post) => ({
+      params: {
+        slug: post.slug
+      }
+    })),
+    fallback: false
   }
 }
 

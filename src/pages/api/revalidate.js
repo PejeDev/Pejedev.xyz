@@ -14,6 +14,7 @@ export default async function handler (req, res) {
   try {
     await res.revalidate('/')
     await res.revalidate('/blog')
+    await res.revalidate('/about-me')
     const posts = await getGhostLatestPosts()
 
     for (const post of posts) {
