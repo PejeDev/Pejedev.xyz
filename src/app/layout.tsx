@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/ghost-components.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import type { Metadata } from 'next'

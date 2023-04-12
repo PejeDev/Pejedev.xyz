@@ -1,0 +1,70 @@
+.gh-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gh-content > h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  font-weight: 700
+}
+
+.gh-content > h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.gh-content > h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+.gh-content > p {
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.gh-content > ul > li {
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.gh-content > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.gh-content > ul > li:first-child {
+  margin-top: 0;
+}
+
+.gh-content > blockquote:not([class]) {
+  position: relative;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.gh-content > blockquote:not([class])::before {
+  content: "";
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  bottom: 0;
+  width: 0.3rem;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.gh-content > blockquote {
+  position: relative;
+  margin-top: max(4.8vmin, 32px);
+}
+
+.gh-content > blockquote + * {
+  margin-top: max(4.8vmin, 32px) !important;
+}

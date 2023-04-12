@@ -1,7 +1,7 @@
 import { getPage } from '@/lib/ghost'
 import Image from 'next/image'
 import Style from './about-me.module.css'
-import '@/styles/ghost.css'
+import Ghost from '@/styles/ghost.module.css'
 
 const metaTagRegex = /<meta\s+[^>]*property=["']pj:post-logo["'][^>]*>/i
 const contentRegex = /content=["']([^"']+)["']/i
@@ -19,7 +19,7 @@ export default async function AboutMePage (): Promise<JSX.Element> {
         <Image src={logoUrl} alt={page.title ?? ''} width={400} height={400} />
         <h1>{page.title}</h1>
       </div>
-      <div className={Style['page-content']} dangerouslySetInnerHTML={{ __html: page.html ?? '' }} />
+      <div className={Ghost['gh-content']} dangerouslySetInnerHTML={{ __html: page.html ?? '' }} />
     </>
   )
 }

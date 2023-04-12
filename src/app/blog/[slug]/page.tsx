@@ -1,7 +1,7 @@
 import { getPost } from '@/lib/ghost'
 import Style from './blog-post.module.css'
 import Image from 'next/image'
-import '@/styles/ghost.css'
+import Ghost from '@/styles/ghost.module.css'
 
 interface BlogPostProps {
   params: {
@@ -30,7 +30,7 @@ export default async function BlogPost ({ params }: BlogPostProps): Promise<JSX.
         </div>
         <hr />
       </div>
-      <div className={Style['post-content']} dangerouslySetInnerHTML={{ __html: post.html ?? '' }} />
+      <div className={Ghost['gh-content']} dangerouslySetInnerHTML={{ __html: post.html ?? '' }} />
     </>
   )
 }
