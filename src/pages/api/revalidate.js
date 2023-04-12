@@ -6,7 +6,7 @@ function getGhostLatestPosts () {
     .then((res) => res.posts)
 }
 
-export default async function revalidate (req, res) {
+export default async function handler (req, res) {
   if (req.query.token !== process.env.REVALIDATE_TOKEN) {
     return res.status(401).json({ message: 'Invalid token' })
   }
@@ -23,6 +23,7 @@ export default async function revalidate (req, res) {
 
     return res.json({ revalidated: true })
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ message: 'Error at revalidating ISR', error })
   }
 }
