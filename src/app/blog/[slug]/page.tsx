@@ -9,6 +9,35 @@ interface BlogPostProps {
   }
 }
 
+export async function generateMetadata ({ params }: BlogPostProps): Promise<Record<string, unknown>> {
+  const post = await getPost(params.slug)
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.tags?.map((tag) => tag.name).join(', ') ?? '',
+    authors: [
+      {
+        name: post.primary_author?.name ?? '',
+        url: post.primary_author?.twitter ?? ''
+      }
+    ],
+    openGraph: {
+      title: post.og_title ?? post.title,
+      description: post.og_description ?? post.excerpt,
+      images: [
+        {
+          url: post.og_image ?? post.feature_image ?? '',
+          width: 1200,
+          height: 630
+        }
+      ]
+    },
+    alternates: {
+      canonical: `/blog/${params.slug}`
+    }
+  }
+}
+
 export default async function BlogPost ({ params }: BlogPostProps): Promise<JSX.Element> {
   const post = await getPost(params.slug)
   const formattedDate = new Date(post.published_at ?? '').toLocaleDateString('en-US', {

@@ -3,7 +3,10 @@ import Style from './blog.module.css'
 import { getPosts } from '@/lib/ghost'
 
 export const metadata = {
-  title: 'Blog'
+  title: 'Blog',
+  alternates: {
+    canonical: '/blog'
+  }
 }
 
 export default async function BlogPage (): Promise<JSX.Element> {

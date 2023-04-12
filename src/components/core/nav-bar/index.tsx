@@ -57,7 +57,7 @@ export function NavBar (): JSX.Element {
         </Link>
         <NavBarMenu menu={menu} toggle={toggleMenu} isToggle={isToggle}/>
       </div>
-      { isToggle ? <MobileContent menu={menu} /> : null }
+      { isToggle ? <MobileContent menu={menu} toggle={toggleMenu} /> : null }
     </nav>
   )
 }

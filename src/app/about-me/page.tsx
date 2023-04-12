@@ -6,6 +6,15 @@ import Ghost from '@/styles/ghost.module.css'
 const metaTagRegex = /<meta\s+[^>]*property=["']pj:post-logo["'][^>]*>/i
 const contentRegex = /content=["']([^"']+)["']/i
 
+export const metadata = {
+  title: 'About Me',
+  description: 'About me page with information about me and my work experience.',
+  keywords: 'about me, about me page, about me website, about me website page',
+  alternates: {
+    canonical: '/about-me'
+  }
+}
+
 export default async function AboutMePage (): Promise<JSX.Element> {
   const page = await getPage('about-me')
   const metaTag = page?.html?.match(metaTagRegex) ?? ''
