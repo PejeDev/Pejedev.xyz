@@ -1,0 +1,203 @@
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  font-weight: 700
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+li {
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+.kg-callout-card-container {
+  position: relative;
+  min-height: 4rem;
+  min-width: 100%;
+  margin: 0;
+  padding: 0
+}
+
+.kg-callout-card {
+  display: flex;
+  padding: 20px 28px;
+  background: #1c1e21;
+  border-radius: 3px
+}
+
+.kg-callout-card-grey {
+  background: rgba(124,139,154,.13)
+}
+
+.kg-callout-card-white {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(124,139,154,.25)
+}
+
+.kg-callout-card-blue {
+  background: rgba(33,172,232,.12)
+}
+
+.kg-callout-card-green {
+  background: rgba(52,183,67,.12)
+}
+
+.kg-callout-card-yellow {
+  background: rgba(240,165,15,.13)
+}
+
+.kg-callout-card-red {
+  background: rgba(209,46,46,.11)
+}
+
+.kg-callout-card-pink {
+  background: rgba(225,71,174,.11)
+}
+
+.kg-callout-card-purple {
+  background: rgba(135,85,236,.12)
+}
+
+.kg-callout-card-accent {
+  background: var(--adjusted-accent-color)
+}
+
+.kg-callout-card-accent a,.kg-callout-card-accent p {
+  color: #101114!important
+}
+
+.kg-callout-emoji {
+  height: 32px;
+  margin-right: 8px;
+  margin-left: -8px;
+  padding: 0 8px;
+  font-size: 2rem;
+  line-height: 1.6;
+  cursor: pointer;
+  border-radius: 3px
+}
+
+.kg-callout-emoji:hover,.kg-emoji-picker-active {
+  background: rgba(124,139,154,.13)
+}
+
+.kg-callout-palette {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .4rem
+}
+
+.kg-callout-palette-swatch {
+  display: inline-block;
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 3px; 
+  border-radius: 3px
+}
+
+.kg-callout-palette-swatch.selected-swatch,.kg-callout-palette-swatch:hover {
+  box-shadow: inset 0 0 0 1px #30cf43
+}
+
+.kg-callout-palette-swatch-grey {
+  background: rgba(124,139,154,.25);
+  box-shadow: inset 0 0 0 1px rgba(124,139,154,.3)
+}
+
+.kg-callout-palette-swatch-white {
+  background: transparent;
+  border: 1px solid rgba(124,139,154,.45)
+}
+
+.kg-callout-palette-swatch-blue {
+  background: rgba(33,172,232,.25);
+  box-shadow: inset 0 0 0 1px rgba(33,172,232,.3)
+}
+
+.kg-callout-palette-swatch-green {
+  background: rgba(52,183,67,.25);
+  box-shadow: inset 0 0 0 1px rgba(52,183,67,.3)
+}
+
+.kg-callout-palette-swatch-yellow {
+  background: rgba(240,165,15,.25);
+  box-shadow: inset 0 0 0 1px rgba(240,165,15,.3)
+}
+
+.kg-callout-palette-swatch-red {
+  background: rgba(209,46,46,.25);
+  box-shadow: inset 0 0 0 1px rgba(209,46,46,.3)
+}
+
+.kg-callout-palette-swatch-pink {
+  background: rgba(225,71,174,.25);
+  box-shadow: inset 0 0 0 1px rgba(225,71,174,.3)
+}
+
+.kg-callout-palette-swatch-purple {
+  background: rgba(135,85,236,.25);
+  box-shadow: inset 0 0 0 1px rgba(135,85,236,.3)
+}
+
+.kg-callout-palette-swatch-accent {
+  background: var(--adjusted-accent-color)
+}
+
+.kg-callout-card div.kg-callout-text {
+  font-size: .95em;
+  line-height: 1.5em
+}
+
+blockquote:not([class]) {
+  position: relative;
+  font-style: italic;
+  padding: 0;
+}
+
+blockquote:not([class])::before {
+  content: "";
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  bottom: 0;
+  width: 0.3rem;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+blockquote {
+  position: relative;
+  margin-top: max(4.8vmin, 32px);
+}
+
+blockquote + * {
+  margin-top: max(4.8vmin, 32px) !important;
+}

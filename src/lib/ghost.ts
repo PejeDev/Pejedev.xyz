@@ -1,4 +1,4 @@
-import GhostContentAPI, { type PostsOrPages } from '@tryghost/content-api'
+import GhostContentAPI, { type PostsOrPages, type PostOrPage } from '@tryghost/content-api'
 
 const api = new GhostContentAPI({
   url: 'https://ghost.pejedev.xyz',
@@ -17,5 +17,31 @@ export async function getPosts (n: number = 2, page: number = 1): Promise<PostsO
   } catch (error) {
     console.error(error)
     return []
+  }
+}
+
+export async function getPost (slug: string): Promise<PostOrPage | never> {
+  try {
+    const post = await api.posts.read({
+      slug
+    }, {
+      include: ['tags', 'authors']
+    })
+    return post
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export async function getPage (slug: string): Promise<PostOrPage | never> {
+  try {
+    const page = await api.pages.read({
+      slug
+    })
+    return page
+  } catch (error) {
+    console.error(error)
+    throw error
   }
 }
