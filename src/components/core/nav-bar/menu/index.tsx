@@ -1,6 +1,6 @@
-import { type MenuItem } from '@/types/navigation'
-import Style from './nav-bar-menu.module.css'
+import type { MenuItem } from '@/types/navigation'
 import Link from 'next/link'
+import Style from './nav-bar-menu.module.css'
 
 interface ComponentProps {
   menu: MenuItem[]
@@ -8,24 +8,38 @@ interface ComponentProps {
   isToggle: boolean
 }
 
-export function NavBarMenu ({ menu, toggle, isToggle }: ComponentProps): JSX.Element {
+export function NavBarMenu({
+  menu,
+  toggle,
+  isToggle,
+}: ComponentProps): JSX.Element {
   return (
     <div className={Style.navMenu}>
       <div className={Style.navMenuDesktop}>
-        {menu.map((item) =>
-          <Link title={item.name} href={item.path} key={item.name} className={item.selected ? `${Style.menuItem} ${Style.selected}` : Style.menuItem}>
+        {menu.map((item) => (
+          <Link
+            title={item.name}
+            href={item.path}
+            key={item.name}
+            className={
+              item.selected
+                ? `${Style.menuItem} ${Style.selected}`
+                : Style.menuItem
+            }
+          >
             {item.name}
           </Link>
-        )
-        }
+        ))}
       </div>
       <div className={Style.navMenuMobile}>
         <div
           id={Style.hamburger}
           onClick={toggle}
+          onKeyDown={toggle}
           className={isToggle ? Style.open : ''}
         >
           <svg width="24" height="24" viewBox="0 0 100 100">
+            <title>Menu</title>
             <path
               className={`${Style.line} ${Style.line1}`}
               d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -38,7 +52,6 @@ export function NavBarMenu ({ menu, toggle, isToggle }: ComponentProps): JSX.Ele
           </svg>
         </div>
       </div>
-
     </div>
   )
 }

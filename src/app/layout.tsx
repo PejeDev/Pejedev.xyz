@@ -1,45 +1,45 @@
 import '@/styles/globals.css'
-import '@/styles/ghost-components.css'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-
+import { NextUIProvider } from '@nextui-org/react'
 import type { Metadata } from 'next'
 
-import { config } from '@fortawesome/fontawesome-svg-core'
-import { NavBar } from '@/components/core/nav-bar'
 import { Footer } from '@/components/core/footer'
-
-config.autoAddCss = false
+import { NavBar } from '@/components/core/nav-bar'
 
 export const metadata: Metadata = {
   title: {
     default: 'Home | PejeDev Blog & Portfolio',
-    template: '%s | PejeDev Blog & Portfolio'
+    template: '%s | PejeDev Blog & Portfolio',
   },
   description:
     'PejeDev is blog about web development, programming, and other stuff',
-  keywords: 'web development, programming, javascript, typescript, react, nextjs, nodejs, css, html, blog, portfolio, pejedev',
+  keywords:
+    'web development, programming, javascript, typescript, react, nextjs, nodejs, css, html, blog, portfolio, pejedev',
   alternates: {
-    canonical: '/'
-  }
-
+    canonical: '/',
+  },
 }
 
-export default function RootLayout ({
-  children
+export default function RootLayout({
+  children,
 }: {
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className="dark text-foreground bg-background">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="all" />
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍🎤</text></svg>" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍🎤</text></svg>"
+        />
       </head>
       <body>
-        <NavBar />
-        {children}
-        <Footer />
+        <NextUIProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </NextUIProvider>
       </body>
     </html>
   )

@@ -1,39 +1,61 @@
-import { type IconProp } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faLinkedin, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaEnvelope, FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { FaTwitter } from 'react-icons/fa'
 
+import Link from 'next/link'
 import Style from './footer.module.css'
+import SocialIcon from './social-icon'
 
-export function Footer (): JSX.Element {
+export function Footer(): JSX.Element {
   const year = new Date().getFullYear()
 
+  const socialIcons = socialData.map((social) => (
+    <SocialIcon key={social.title} {...social} />
+  ))
+
   return (
-    <footer className={Style.footer}>
+    <footer className="relative bottom-0 flex flex-col justify-center items-center max-w-[900px] w-full mx-auto">
       <hr />
-      <div className={Style.footerContent}>
-        <div className={Style.footerSocialLinks}>
-          <a title='@PejeDev Github profile' href="https://github.com/PejeDev" >
-            <FontAwesomeIcon icon={faGithub as IconProp} />
-          </a>
-          <a title='@PejeDev Twitter profile' href="https://twitter.com/PejeDev" >
-            <FontAwesomeIcon icon={faTwitter as IconProp} />
-          </a>
-          <a title='@PejeDev LinkedIn profile' href="https://www.linkedin.com/in/pejedev/" >
-            <FontAwesomeIcon icon={faLinkedin as IconProp} />
-          </a>
-          <a title='@PejeDev Telegram Account' href="https://t.me/PejeDev" >
-            <FontAwesomeIcon icon={faTelegram as IconProp} />
-          </a>
-          <a title='@Pejdev Email Account' href='mailto:hi@pejedev.xyz'>
-            <FontAwesomeIcon icon={faEnvelope as IconProp} />
-          </a>
-        </div>
+      <div className="flex flex-row justify-between mx-2 w-full">
+        <div className="flex flex-row ml-4">{socialIcons}</div>
         <div className={Style.footerCopyright}>
-          © {year} | Made with ❤️ by
-          <a title='@PejeDev Twitter profile' href="https://twitter.com/PejeDev"> @PejeDev</a>.
+          © {year} | Made with ❤️ by{' '}
+          <Link
+            title="@PejeDev Twitter profile"
+            href="https://twitter.com/PejeDev"
+          >
+            @PejeDev
+          </Link>
+          .
         </div>
       </div>
     </footer>
   )
 }
+
+const socialData = [
+  {
+    title: '@PejeDev Github profile',
+    link: 'https://github.com/PejeDev',
+    Icon: FaGithub,
+  },
+  {
+    title: '@PejeDev Twitter profile',
+    link: 'https://twitter.com/PejeDev',
+    Icon: FaTwitter,
+  },
+  {
+    title: '@PejeDev LinkedIn profile',
+    link: 'https://www.linkedin.com/in/pejedev/',
+    Icon: FaLinkedin,
+  },
+  {
+    title: '@PejeDev Telegram Account',
+    link: 'https://t.me/PejeDev',
+    Icon: FaTelegram,
+  },
+  {
+    title: '@Pejdev Email Account',
+    link: 'mailto:hi@pejedev.xyz',
+    Icon: FaEnvelope,
+  },
+]
