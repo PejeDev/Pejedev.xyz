@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import { NavBar } from '@/components/core/nav-bar'
 import { Footer } from '@/components/core/footer'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 config.autoAddCss = false
 
@@ -37,9 +38,11 @@ export default function RootLayout ({
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍🎤</text></svg>" />
       </head>
       <body>
-        <NavBar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

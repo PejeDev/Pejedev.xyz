@@ -1,0 +1,85 @@
+/* =========================================================
+   THEME SYSTEM — CSS Variables
+   ========================================================= */
+
+/* ---------- Default: Dark ---------- */
+:root,
+[data-theme="dark"] {
+  --bg-primary:    #101014;
+  --bg-secondary:  #1a1a22;
+  --bg-card:       #1e1e28;
+  --text-primary:  #ffffff;
+  --text-secondary:rgba(255,255,255,0.65);
+  --text-muted:    rgba(255,255,255,0.35);
+  --accent:        #7c6aff;
+  --accent-hover:  #a394ff;
+  --border:        rgba(255,255,255,0.09);
+  --hr:            rgba(255,255,255,0.09);
+  --link:          rgba(255,255,255,0.65);
+  --link-hover:    #ffffff;
+}
+
+/* ---------- Cyberpunk ---------- */
+[data-theme="cyberpunk"] {
+  --bg-primary:    #0d0015;
+  --bg-secondary:  #1a0030;
+  --bg-card:       #1f0040;
+  --text-primary:  #f0e0ff;
+  --text-secondary:rgba(240,200,255,0.75);
+  --text-muted:    rgba(240,200,255,0.35);
+  --accent:        #ff00c8;
+  --accent-hover:  #ff6ee8;
+  --border:        rgba(255,0,200,0.18);
+  --hr:            rgba(255,0,200,0.18);
+  --link:          #cc00ff;
+  --link-hover:    #ff00c8;
+}
+
+/* ---------- Minimal Light ---------- */
+[data-theme="light"] {
+  --bg-primary:    #f8f8fb;
+  --bg-secondary:  #efeff5;
+  --bg-card:       #ffffff;
+  --text-primary:  #111118;
+  --text-secondary:rgba(17,17,24,0.70);
+  --text-muted:    rgba(17,17,24,0.40);
+  --accent:        #4a38d4;
+  --accent-hover:  #2e1fb8;
+  --border:        rgba(0,0,0,0.09);
+  --hr:            rgba(0,0,0,0.09);
+  --link:          rgba(17,17,24,0.70);
+  --link-hover:    #111118;
+}
+
+/* ---------- Forest ---------- */
+[data-theme="forest"] {
+  --bg-primary:    #0a130b;
+  --bg-secondary:  #121c13;
+  --bg-card:       #172118;
+  --text-primary:  #d4edcc;
+  --text-secondary:rgba(180,220,170,0.75);
+  --text-muted:    rgba(180,220,170,0.40);
+  --accent:        #5cdb6e;
+  --accent-hover:  #8ef89e;
+  --border:        rgba(92,219,110,0.12);
+  --hr:            rgba(92,219,110,0.12);
+  --link:          rgba(180,220,170,0.75);
+  --link-hover:    #d4edcc;
+}
+
+/* ---------- Retro Terminal ---------- */
+[data-theme="terminal"] {
+  --bg-primary:    #000000;
+  --bg-secondary:  #0a0a00;
+  --bg-card:       #0f0f00;
+  --text-primary:  #33ff00;
+  --text-secondary:rgba(50,220,0,0.80);
+  --text-muted:    rgba(50,220,0,0.45);
+  --accent:        #aaff00;
+  --accent-hover:  #ccff66;
+  --border:        rgba(50,220,0,0.18);
+  --hr:            rgba(50,220,0,0.18);
+  --link:          rgba(50,220,0,0.80);
+  --link-hover:    #33ff00;
+  font-family: 'Courier New', Courier, monospace !important;
+}

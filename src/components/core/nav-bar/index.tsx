@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { MobileContent } from './mobile-content'
 import Link from 'next/link'
+import { ThemeSwitcher } from '@/components/core/theme-switcher'
 
 export function NavBar (): JSX.Element {
   const [isToggle, setIsToggle] = useState(false)
@@ -56,6 +57,7 @@ export function NavBar (): JSX.Element {
           <span>PejeDev</span>
         </Link>
         <NavBarMenu menu={menu} toggle={toggleMenu} isToggle={isToggle}/>
+        <ThemeSwitcher />
       </div>
       { isToggle ? <MobileContent menu={menu} toggle={toggleMenu} /> : null }
     </nav>
